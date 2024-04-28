@@ -19,6 +19,6 @@ To deploy this project
 
 Please note that NinjaApply is still under development, and there's more work to be done to enhance its features and usability.
 
-<img src="https://github.com/808Kamalesh/NinjaFill/assets/154341138/e5303104-af5d-4367-905d-2c78f4ac12ee" width="300"><br>
+<img src="https://github.com/808Kamalesh/NinjaFill/assets/154341138/e5303104-af5d-4367-905d-2c78f4ac12ee" width="500"><br>
 
-<img src="https://github.com/808Kamalesh/NinjaFill/assets/154341138/0ab27ca0-9063-4aa2-872e-7e334f7762da" width="300">
+<img src="https://github.com/808Kamalesh/NinjaFill/assets/154341138/0ab27ca0-9063-4aa2-872e-7e334f7762da" width="500">
