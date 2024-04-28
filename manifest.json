@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "NinjaFill Extension",
+  "version": "1.0",
+  "description": "Autofills job application forms with stored user information.",
+  "permissions": ["storage", "activeTab", "tabs"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["info.html"],
+      "matches": ["*://*/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "icons": {
+    "48": "star.png"
+  }
+}
