@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.getElementById('autofillButton').addEventListener('click', function() {
-    chrome.storage.sync.get(['name', 'address', 'email', 'phone'], function(data) {
+    chrome.storage.sync.get(['name', 'address', 'email', 'phone', 'linkedin', 'portfolio', 'workExperience', 'education', 'skills'], function(data) {
       console.log('Sending autofill data:', data);
       chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { action: 'autofill', data: data });
       });
     });
   });
-});
+})
