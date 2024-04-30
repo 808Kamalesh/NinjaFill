@@ -17,42 +17,55 @@ body {
     padding: 30px;
 }
 
-
 header {
     text-align: center;
     margin-bottom: 30px;
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
     color: #333;
     margin-bottom: 8px;
 }
 
-p {
-    font-size: 14px;
-    color: #666;
-}
-
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
-input[type="text"] {
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+textarea {
     width: 100%;
-    padding: 12px 16px;
+    padding: 14px 18px; 
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 .btn {
     display: inline-block;
     padding: 12px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 14px;
     font-weight: 600;
     text-align: center;
@@ -87,4 +100,24 @@ input[type="text"] {
 
 .actions button {
     margin-right: 10px; 
+}
+
+body.info-page {
+    background: linear-gradient(45deg, #EE72F8 33.33%, #FFD700 33.33%, #FFD700 66.66%, #32CD32 66.66%);
+}
+
+.info-container {
+    width: 90%;
+    max-width: 400px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

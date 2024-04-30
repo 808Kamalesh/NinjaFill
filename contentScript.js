@@ -10,6 +10,11 @@ function autofillForm(data) {
   const addressField = document.querySelector('input[name="address"]');
   const emailField = document.querySelector('input[name="email"]');
   const phoneField = document.querySelector('input[name="phone"]');
+  const linkedinField = document.querySelector('input[name="linkedin"]');
+  const portfolioField = document.querySelector('input[name="portfolio"]');
+  const workExperienceField = document.querySelector('textarea[name="workExperience"]');
+  const educationField = document.querySelector('textarea[name="education"]');
+  const skillsField = document.querySelector('textarea[name="skills"]');
 
   if (nameField) {
     nameField.value = data.name;
@@ -25,5 +30,25 @@ function autofillForm(data) {
 
   if (phoneField) {
     phoneField.value = data.phone;
+  }
+
+  if (linkedinField) {
+    linkedinField.value = data.linkedin;
+  }
+
+  if (portfolioField) {
+    portfolioField.value = data.portfolio;
+  }
+
+  if (workExperienceField) {
+    workExperienceField.value = data.workExperience;
+  }
+
+  if (educationField) {
+    educationField.value = data.education;
+  }
+
+  if (skillsField) {
+    skillsField.value = data.skills;
   }
 }
