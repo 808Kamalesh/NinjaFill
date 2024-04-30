@@ -1,7 +1,7 @@
 
 # NinjaFill
 
-NinjaApply is a browser extension that automates job application forms. Save time by filling out applications with a single click. Let NinjaApply handle the details while you focus on finding your next job.
+NinjaFill is a browser extension that automates job application forms. Save time by filling out applications with a single click. Let NinjaFill handle the details while you focus on finding your next job.
 ## Installation
 
 To deploy this project
