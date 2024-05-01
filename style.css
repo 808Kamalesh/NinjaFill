@@ -51,13 +51,14 @@ textarea {
     font-family: 'Montserrat', sans-serif;
     background-color: #f8f8f8;
     color: #333;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s; 
     box-sizing: border-box;
 }
 
 input[type="text"]:focus,
 textarea:focus {
-    border-color: #007bff;
+    border-color: #4285F4;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.3); 
     outline: none;
 }
 
@@ -75,21 +76,21 @@ textarea:focus {
 }
 
 .btn-primary {
-    background-color: #4CAF50;
+    background-color: #34A853;
     color: #fff;
 }
 
 .btn-primary:hover {
-    background-color: #3e8e41;
+    background-color: #2C8D44;
 }
 
 .btn-secondary {
-    background-color: #2196F3;
-    color: #fff;
+    background-color: #FBBC05;
+    color: #000;
 }
 
 .btn-secondary:hover {
-    background-color: #1a73e8;
+    background-color: #F7B903;
 }
 
 .actions {
@@ -103,29 +104,42 @@ textarea:focus {
 }
 
 body.info-page {
-    background: linear-gradient(45deg, #EE72F8 33.33%, #FFD700 33.33%, #FFD700 66.66%, #32CD32 66.66%);
+    background-color: #4285F4;
 }
 
 .info-container {
     width: 90%;
-    max-width: 400px;
-    background-color: #fff;
+    max-width: 600px;
+    background-color: #f9f9f9;
     border-radius: 8px;
     padding: 30px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    animation: fadeIn 1.2s forwards;
+    opacity: 1;
+    animation: none;
+}
+
+.info-container h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.info-container p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 16px;
 }
 
 
 .save-status {
     margin-top: 10px;
-    color: #28a745;
+    color: #0F9D58;
     font-weight: 600;
 }
 
 .save-success {
-    color: #28a745;
+    color: #0F9D58;
 }
 
 @keyframes fadeIn {
