@@ -75,21 +75,21 @@ textarea:focus {
 }
 
 .btn-primary {
-    background-color: #28a745; 
+    background-color: #4CAF50;
     color: #fff;
 }
 
 .btn-primary:hover {
-    background-color: #218838; 
+    background-color: #3e8e41;
 }
 
 .btn-secondary {
-    background-color: #007bff; 
+    background-color: #2196F3;
     color: #fff;
 }
 
 .btn-secondary:hover {
-    background-color: #0056b3; 
+    background-color: #1a73e8;
 }
 
 .actions {
@@ -109,8 +109,23 @@ body.info-page {
 .info-container {
     width: 90%;
     max-width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     opacity: 0;
-    animation: fadeIn 1.5s forwards;
+    animation: fadeIn 1.2s forwards;
+}
+
+
+.save-status {
+    margin-top: 10px;
+    color: #28a745;
+    font-weight: 600;
+}
+
+.save-success {
+    color: #28a745;
 }
 
 @keyframes fadeIn {

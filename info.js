@@ -23,7 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const skills = document.getElementById('skillsField').value;
 
     chrome.storage.sync.set({ 'name': name, 'address': address, 'email': email, 'phone': phone, 'linkedin': linkedin, 'portfolio': portfolio, 'workExperience': workExperience, 'education': education, 'skills': skills }, function() {
-      console.log('User information saved to storage.');
+      const saveStatus = document.getElementById('saveStatus');
+      saveStatus.textContent = 'User information saved successfully!';
+      saveStatus.classList.add('save-success');
+      setTimeout(function() {
+        saveStatus.textContent = '';
+        saveStatus.classList.remove('save-success');
+      }, 3000);
     });
   });
 });
