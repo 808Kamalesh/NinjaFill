@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  const container = document.querySelector('.container');
+
+  darkModeToggle.addEventListener('change', () => {
+    body.classList.toggle('dark-mode');
+    container.classList.toggle('dark-mode');
+  });
+
   document.getElementById('infoButton').addEventListener('click', function() {
     chrome.tabs.create({ url: chrome.runtime.getURL('info.html') });
   });
@@ -11,4 +20,4 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
-})
+});

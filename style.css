@@ -1,7 +1,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #ffffff;
-    padding: 20px;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -62,35 +61,39 @@ textarea:focus {
     outline: none;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.button-74 {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.btn-primary {
-    background-color: #34A853;
-    color: #fff;
+.button-74:hover {
+  background-color: #fff;
 }
 
-.btn-primary:hover {
-    background-color: #2C8D44;
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
 }
 
-.btn-secondary {
-    background-color: #FBBC05;
-    color: #000;
-}
-
-.btn-secondary:hover {
-    background-color: #F7B903;
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
 }
 
 .actions {
@@ -104,18 +107,23 @@ textarea:focus {
 }
 
 body.info-page {
-    background-color: #4285F4;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .info-container {
     width: 90%;
     max-width: 600px;
     background-color: #f9f9f9;
-    border-radius: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
     padding: 30px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    opacity: 1;
-    animation: none;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .info-container h1 {
@@ -130,7 +138,6 @@ body.info-page {
     color: #555;
     margin-bottom: 16px;
 }
-
 
 .save-status {
     margin-top: 10px;
@@ -150,3 +157,88 @@ body.info-page {
         opacity: 1;
     }
 }
+
+.toggle-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 30px; 
+    height: 30px; 
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('dark.png');
+    background-size: 20px; 
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    -webkit-transition: background-image 0.4s ease;
+    transition: background-image 0.4s ease;
+}
+
+input:checked + .toggle-slider {
+    background-image: url('light.png'); 
+}
+
+.toggle-slider.round {
+    border-radius: 15px; 
+}
+
+body.dark-mode {
+    background-color: #333333;
+    color: #fff;
+}
+
+.container.dark-mode {
+    background-color: #333333;
+    color: #fff;
+}
+
+body.dark-mode h1 {
+    color: #fff;
+}
+
+.button-54 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-54:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-54 {
+      padding: 0.25em 0.75em;
+    }
+  }
