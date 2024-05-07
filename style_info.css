@@ -1,0 +1,110 @@
+body {
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  font-family: sans-serif;
+  background-color: #fff;
+  color: #000000;
+  font-style: normal;
+}
+
+body.info-page {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.info-container {
+  width: 90%;
+  max-width: 800px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 30px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.info-container h1 {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: sans-serif;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: grid;
+  font-family: sans-serif;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  text-align: right;
+}
+
+.form-group .text-field {
+  font-family: sans-serif;
+  font-size: 15px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  padding: 8px 12px;
+  border: 1px solid #d2d2d7;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #000000;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group .text-field:focus {
+  border-color: #007bff; 
+  box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.3); 
+  outline: none;
+}
+
+.button-54 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+.save-status {
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #000000;
+}
