@@ -9,9 +9,12 @@ To deploy this project
 ```bash
   Download/Clone the file from code. 
   Open chrome://extensions/
-  Enable Developer Mode
+  Enable Developer Mode on top right
   Click on Load Unpacked
-  Select the folder
+  Select the downloaded folder.
+  Fill in your details on info page.
+  Click AutoFill.
+  
 ```
 
 
