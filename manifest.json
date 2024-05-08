@@ -10,7 +10,7 @@
   "web_accessible_resources": [
     {
       "resources": ["info.html"],
-      "matches": ["*://*/*"]
+      "matches": ["<all_urls>"]
     }
   ],
   "content_scripts": [
