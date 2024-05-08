@@ -42,6 +42,45 @@ h1 {
   margin-bottom: 20px;
 }
 
+.tab {
+  overflow: hidden;
+  background-color: #f2f2f2;
+  border-bottom: 0.5px solid #d6d6d6;
+}
+
+.tab button {
+  background-color: transparent;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: 0.3s;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.tab button:hover {
+  background-color: #e6e6e6;
+}
+
+.tab button.active {
+  border-bottom: 2px solid #0071e3;
+  color: #0071e3;
+  font-weight: 600;
+}
+
+.tabcontent {
+  display: none;
+  padding: 20px;
+  border-top: 1px solid #d6d6d6;
+}
+
+.tabcontent.active {
+  display: block;
+}
+
 .form-group {
   display: grid;
   font-family: sans-serif;

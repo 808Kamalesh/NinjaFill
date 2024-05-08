@@ -9,43 +9,115 @@
     <header>
       <h1>User Information</h1>
     </header>
+    <div class="tab">
+      <button id="personalInfoTab" class="tablinks active">Personal Info</button>
+      <button id="educationAndWorkTab" class="tablinks">Education & Work</button>
+    </div>
+
     <form class="user-info-grid" id="userForm">
-      <div class="form-group">
-        <label for="nameField">Name</label>
-        <input type="text" id="nameField" class="text-field" placeholder="Enter your name" required>
+      <div id="personalInfo" class="tabcontent active">
+        <div class="form-group">
+          <label for="nameField">Name</label>
+          <input type="text" id="nameField" class="text-field" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="dateOfBirthField">Date of Birth</label>
+          <input type="date" id="dateOfBirthField" class="text-field" required>
+        </div>
+        <div class="form-group">
+          <label for="genderField">Gender</label>
+          <select id="genderField" class="text-field" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nationalityField">Nationality</label>
+          <input type="text" id="nationalityField" class="text-field" placeholder="Enter your nationality" required>
+        </div>
+        <div class="form-group">
+          <label for="maritalStatusField">Marital Status</label>
+          <select id="maritalStatusField" class="text-field" required>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="divorced">Divorced</option>
+            <option value="widowed">Widowed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="emailField">Email</label>
+          <input type="email" id="emailField" class="text-field" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="phoneField">Phone</label>
+          <input type="tel" id="phoneField" class="text-field" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+          <label for="alternatePhoneField">Alternate Phone Number</label>
+          <input type="tel" id="alternatePhoneField" class="text-field" placeholder="Enter your alternate phone number">
+        </div>
+        <div class="form-group">
+          <label for="linkedinField">LinkedIn Profile URL</label>
+          <input type="url" id="linkedinField" class="text-field" placeholder="Enter your LinkedIn profile URL">
+        </div>
+        <div class="form-group">
+          <label for="websiteField">Personal Website URL</label>
+          <input type="url" id="websiteField" class="text-field" placeholder="Enter your personal website URL">
+        </div>
       </div>
-      <div class="form-group">
-        <label for="addressField">Address</label>
-        <input type="text" id="addressField" class="text-field" placeholder="Enter your address">
+
+      <div id="educationAndWork" class="tabcontent">
+        <div class="form-group">
+          <label for="educationField">Education</label>
+          <input type="text" id="educationField" class="text-field" placeholder="Enter your education details">
+        </div>
+        <div class="form-group">
+          <label for="majorField">Major/Field of Study</label>
+          <input type="text" id="majorField" class="text-field" placeholder="Enter your major/field of study">
+        </div>
+        <div class="form-group">
+          <label for="gpaField">GPA/Grade Average</label>
+          <input type="text" id="gpaField" class="text-field" placeholder="Enter your GPA/Grade Average">
+        </div>
+        <div class="form-group">
+          <label for="courseworkField">Relevant Coursework</label>
+          <input type="text" id="courseworkField" class="text-field" placeholder="Enter relevant coursework">
+        </div>
+        <div class="form-group">
+          <label for="workExperienceField">Work Experience</label>
+          <input type="text" id="workExperienceField" class="text-field" placeholder="Enter your work experience">
+        </div>
+        <div class="form-group">
+          <label for="internshipsField">Internships</label>
+          <input type="text" id="internshipsField" class="text-field" placeholder="Enter your internships">
+        </div>
+        <div class="form-group">
+          <label for="volunteerField">Volunteer Experience</label>
+          <input type="text" id="volunteerField" class="text-field" placeholder="Enter your volunteer experience">
+        </div>
+        <div class="form-group">
+          <label for="certificationsField">Certifications</label>
+          <input type="text" id="certificationsField" class="text-field" placeholder="Enter your certifications">
+        </div>
+        <div class="form-group">
+          <label for="skillsField">Skills</label>
+          <input type="text" id="skillsField" class="text-field" placeholder="Enter your skills">
+        </div>
+        <div class="form-group">
+          <label for="technicalSkillsField">Technical Skills</label>
+          <input type="text" id="technicalSkillsField" class="text-field" placeholder="Enter your technical skills">
+        </div>
+        <div class="form-group">
+          <label for="softSkillsField">Soft Skills</label>
+          <input type="text" id="softSkillsField" class="text-field" placeholder="Enter your soft skills">
+        </div>
+        <div class="form-group">
+          <label for="languageField">Language Proficiency</label>
+          <input type="text" id="languageField" class="text-field" placeholder="Enter your language proficiency">
+        </div>
       </div>
-      <div class="form-group">
-        <label for="emailField">Email</label>
-        <input type="email" id="emailField" class="text-field" placeholder="Enter your email" required>
-      </div>
-      <div class="form-group">
-        <label for="phoneField">Phone</label>
-        <input type="tel" id="phoneField" class="text-field" placeholder="Enter your phone number">
-      </div>
-      <div class="form-group">
-        <label for="linkedinField">LinkedIn Profile URL</label>
-        <input type="url" id="linkedinField" class="text-field" placeholder="Enter your LinkedIn profile URL">
-      </div>
-      <div class="form-group">
-        <label for="portfolioField">Portfolio Website URL</label>
-        <input type="url" id="portfolioField" class="text-field" placeholder="Enter your portfolio website URL">
-      </div>
-      <div class="form-group">
-        <label for="workExperienceField">Work Experience</label>
-        <textarea id="workExperienceField" rows="4" class="text-field" placeholder="Enter your work experience"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="educationField">Education</label>
-        <textarea id="educationField" rows="4" class="text-field" placeholder="Enter your education details"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="skillsField">Skills</label>
-        <textarea id="skillsField" rows="4" class="text-field" placeholder="Enter your skills"></textarea>
-      </div>
+
       <button id="saveButton" class="button-54" type="submit">Save</button>
       <div id="saveStatus" class="save-status"></div>
     </form>
