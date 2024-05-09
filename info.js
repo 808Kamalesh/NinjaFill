@@ -26,10 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
     evt.currentTarget.classList.add("active");
   }
 
-  chrome.storage.sync.get(['name', 'dateOfBirth', 'gender', 'nationality', 'maritalStatus', 'email', 'phone', 'alternatePhone', 'linkedin', 'website', 'education', 'major', 'gpa', 'coursework', 'workExperience', 'internships', 'volunteer', 'certifications', 'skills', 'technicalSkills', 'softSkills', 'language'], function(data) {
+  chrome.storage.sync.get(['name', 'dateOfBirth', 'gender', 'nationality', 'maritalStatus', 'email', 'phone', 'alternatePhone', 'linkedin', 'website', 'github', 'education', 'major', 'gpa', 'coursework', 'workExperience', 'internships', 'volunteer', 'certifications', 'skills', 'technicalSkills', 'softSkills', 'language'], function(data) {
+    const [firstName, ...lastName] = (data.name || '').split(' ');
     document.getElementById('nameField').value = data.name || '';
     document.getElementById('dateOfBirthField').value = data.dateOfBirth || '';
-    document.getElementById('genderField').value = data.gender || '';
+    document.querySelector(`input[name="gender"][value="${data.gender || 'prefer-not-to-say'}"]`).checked = true;
     document.getElementById('nationalityField').value = data.nationality || '';
     document.getElementById('maritalStatusField').value = data.maritalStatus || '';
     document.getElementById('emailField').value = data.email || '';
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('alternatePhoneField').value = data.alternatePhone || '';
     document.getElementById('linkedinField').value = data.linkedin || '';
     document.getElementById('websiteField').value = data.website || '';
+    document.getElementById('githubField').value = data.github || '';
     document.getElementById('educationField').value = data.education || '';
     document.getElementById('majorField').value = data.major || '';
     document.getElementById('gpaField').value = data.gpa || '';
@@ -53,8 +55,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('saveButton').addEventListener('click', function() {
     const name = document.getElementById('nameField').value;
+    const [firstName, ...lastName] = name.split(' ');
     const dateOfBirth = document.getElementById('dateOfBirthField').value;
-    const gender = document.getElementById('genderField').value;
+    const gender = document.querySelector('input[name="gender"]:checked').value;
     const nationality = document.getElementById('nationalityField').value;
     const maritalStatus = document.getElementById('maritalStatusField').value;
     const email = document.getElementById('emailField').value;
@@ -62,6 +65,7 @@ document.getElementById('saveButton').addEventListener('click', function() {
     const alternatePhone = document.getElementById('alternatePhoneField').value;
     const linkedin = document.getElementById('linkedinField').value;
     const website = document.getElementById('websiteField').value;
+    const github = document.getElementById('githubField').value;
     const education = document.getElementById('educationField').value;
     const major = document.getElementById('majorField').value;
     const gpa = document.getElementById('gpaField').value;
@@ -77,6 +81,8 @@ document.getElementById('saveButton').addEventListener('click', function() {
 
     chrome.storage.sync.set({
         'name': name,
+        'firstName': firstName,
+        'lastName': lastName.join(' '),
         'dateOfBirth': dateOfBirth,
         'gender': gender,
         'nationality': nationality,
@@ -86,6 +92,7 @@ document.getElementById('saveButton').addEventListener('click', function() {
         'alternatePhone': alternatePhone,
         'linkedin': linkedin,
         'website': website,
+        'github': github,
         'education': education,
         'major': major,
         'gpa': gpa,
