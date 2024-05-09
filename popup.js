@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     document.getElementById('autofillButton').addEventListener('click', function() {
       clickSound.play();
-      chrome.storage.sync.get(['name', 'dateOfBirth', 'gender', 'nationality', 'maritalStatus', 'email', 'phone', 'alternatePhone', 'linkedin', 'website', 'education', 'major', 'gpa', 'coursework', 'workExperience', 'internships', 'volunteer', 'certifications', 'skills', 'technicalSkills', 'softSkills', 'language'], function(data) {
+      chrome.storage.sync.get(['name', 'dateOfBirth', 'gender', 'nationality', 'maritalStatus', 'email', 'phone', 'alternatePhone', 'linkedin', 'website', 'github', 'education', 'major', 'gpa', 'coursework', 'workExperience', 'internships', 'volunteer', 'certifications', 'skills', 'technicalSkills', 'softSkills', 'language'], function(data) {
         console.log('Sending autofill data:', data);
         chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
           chrome.tabs.sendMessage(tabs[0].id, { action: 'autofill', data: data });
