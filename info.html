@@ -17,8 +17,8 @@
     <form class="user-info-grid" id="userForm">
       <div id="personalInfo" class="tabcontent active">
         <div class="form-group">
-          <label for="nameField">Name</label>
-          <input type="text" id="nameField" class="text-field" placeholder="Enter your name" required>
+          <label for="nameField">Full Name</label>
+          <input type="text" id="nameField" class="text-field" placeholder="Enter your full name" required>
         </div>
         <div class="form-group">
           <label for="dateOfBirthField">Date of Birth</label>
@@ -26,11 +26,12 @@
         </div>
         <div class="form-group">
           <label for="genderField">Gender</label>
-          <select id="genderField" class="text-field" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select>
+          <div class="radio-group">
+            <label><input type="radio" name="gender" value="male" required> Male</label>
+            <label><input type="radio" name="gender" value="female" required> Female</label>
+            <label><input type="radio" name="gender" value="other" required> Other</label>
+            <label><input type="radio" name="gender" value="prefer-not-to-say" required> Prefer not to say</label>
+          </div>
         </div>
         <div class="form-group">
           <label for="nationalityField">Nationality</label>
@@ -43,14 +44,15 @@
             <option value="married">Married</option>
             <option value="divorced">Divorced</option>
             <option value="widowed">Widowed</option>
+            <option value="other">Other</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="emailField">Email</label>
+          <label for="emailField">Email Address</label>
           <input type="email" id="emailField" class="text-field" placeholder="Enter your email" required>
         </div>
         <div class="form-group">
-          <label for="phoneField">Phone</label>
+          <label for="phoneField">Primary Phone Number</label>
           <input type="tel" id="phoneField" class="text-field" placeholder="Enter your phone number" required>
         </div>
         <div class="form-group">
@@ -59,58 +61,69 @@
         </div>
         <div class="form-group">
           <label for="linkedinField">LinkedIn Profile URL</label>
-          <input type="url" id="linkedinField" class="text-field" placeholder="Enter your LinkedIn profile URL">
+          <input type="url" id="linkedinField" class="text-field" placeholder="https://www.linkedin.com/in/your-profile">
         </div>
         <div class="form-group">
           <label for="websiteField">Personal Website URL</label>
-          <input type="url" id="websiteField" class="text-field" placeholder="Enter your personal website URL">
+          <input type="url" id="websiteField" class="text-field" placeholder="https://www.your-website.com">
+        </div>
+        <div class="form-group">
+          <label for="githubField">GitHub Profile URL</label>
+          <input type="url" id="githubField" class="text-field" placeholder="https://github.com/your-username">
         </div>
       </div>
 
       <div id="educationAndWork" class="tabcontent">
         <div class="form-group">
-          <label for="educationField">Education</label>
-          <input type="text" id="educationField" class="text-field" placeholder="Enter your education details">
+          <label for="educationField">Highest Level of Education</label>
+          <select id="educationField" class="text-field" required>
+            <option value="">Select your highest level of education</option>
+            <option value="high-school">High School</option>
+            <option value="bachelor">Bachelor's Degree</option>
+            <option value="master">Master's Degree</option>
+            <option value="doctorate">Doctorate</option>
+            <option value="other">Other</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="majorField">Major/Field of Study</label>
-          <input type="text" id="majorField" class="text-field" placeholder="Enter your major/field of study">
+          <input type="text" id="majorField" class="text-field" placeholder="Enter your major or field of study">
         </div>
         <div class="form-group">
-          <label for="gpaField">GPA/Grade Average</label>
-          <input type="text" id="gpaField" class="text-field" placeholder="Enter your GPA/Grade Average">
+          <label for="gpaField">GPA (e.g., 3.5 or 85%)</label>
+          <input type="text" id="gpaField" class="text-field" placeholder="Enter your GPA or grade average">
         </div>
         <div class="form-group">
           <label for="courseworkField">Relevant Coursework</label>
-          <input type="text" id="courseworkField" class="text-field" placeholder="Enter relevant coursework">
+          <textarea id="courseworkField" class="text-field" placeholder="Enter your relevant coursework"></textarea>
         </div>
         <div class="form-group">
           <label for="workExperienceField">Work Experience</label>
-          <input type="text" id="workExperienceField" class="text-field" placeholder="Enter your work experience">
+          <textarea id="workExperienceField" class="text-field" placeholder="Enter your work experience"></textarea>
         </div>
         <div class="form-group">
           <label for="internshipsField">Internships</label>
-          <input type="text" id="internshipsField" class="text-field" placeholder="Enter your internships">
+          <textarea id="internshipsField" class="text-field" placeholder="Enter your internships"></textarea>
         </div>
         <div class="form-group">
           <label for="volunteerField">Volunteer Experience</label>
-          <input type="text" id="volunteerField" class="text-field" placeholder="Enter your volunteer experience">
+          <textarea id="volunteerField" class="text-field" placeholder="Enter your volunteer experience"></textarea>
         </div>
         <div class="form-group">
           <label for="certificationsField">Certifications</label>
-          <input type="text" id="certificationsField" class="text-field" placeholder="Enter your certifications">
+          <textarea id="certificationsField" class="text-field" placeholder="Enter your certifications"></textarea>
         </div>
         <div class="form-group">
-          <label for="skillsField">Skills</label>
-          <input type="text" id="skillsField" class="text-field" placeholder="Enter your skills">
+          <label for="skillsField">General Skills</label>
+          <textarea id="skillsField" class="text-field" placeholder="Enter your general skills"></textarea>
         </div>
         <div class="form-group">
           <label for="technicalSkillsField">Technical Skills</label>
-          <input type="text" id="technicalSkillsField" class="text-field" placeholder="Enter your technical skills">
+          <textarea id="technicalSkillsField" class="text-field" placeholder="Enter your technical skills"></textarea>
         </div>
         <div class="form-group">
           <label for="softSkillsField">Soft Skills</label>
-          <input type="text" id="softSkillsField" class="text-field" placeholder="Enter your soft skills">
+          <textarea id="softSkillsField" class="text-field" placeholder="Enter your soft skills"></textarea>
         </div>
         <div class="form-group">
           <label for="languageField">Language Proficiency</label>
