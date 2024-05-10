@@ -11,7 +11,10 @@
     </header>
     <div class="tab">
       <button id="personalInfoTab" class="tablinks active">Personal Info</button>
-      <button id="educationAndWorkTab" class="tablinks">Education & Work</button>
+      <button id="educationTab" class="tablinks">Education</button>
+      <button id="workExperienceTab" class="tablinks">Work Experience</button>
+      <button id="skillsTab" class="tablinks">Skills</button>
+      <button id="projectsTab" class="tablinks">Projects</button>
     </div>
 
     <form class="user-info-grid" id="userForm">
@@ -73,7 +76,7 @@
         </div>
       </div>
 
-      <div id="educationAndWork" class="tabcontent">
+      <div id="education" class="tabcontent">
         <div class="form-group">
           <label for="educationField">Highest Level of Education</label>
           <select id="educationField" class="text-field" required>
@@ -97,6 +100,9 @@
           <label for="courseworkField">Relevant Coursework</label>
           <textarea id="courseworkField" class="text-field" placeholder="Enter your relevant coursework"></textarea>
         </div>
+      </div>
+
+      <div id="workExperience" class="tabcontent">
         <div class="form-group">
           <label for="workExperienceField">Work Experience</label>
           <textarea id="workExperienceField" class="text-field" placeholder="Enter your work experience"></textarea>
@@ -113,6 +119,9 @@
           <label for="certificationsField">Certifications</label>
           <textarea id="certificationsField" class="text-field" placeholder="Enter your certifications"></textarea>
         </div>
+      </div>
+
+      <div id="skills" class="tabcontent">
         <div class="form-group">
           <label for="skillsField">General Skills</label>
           <textarea id="skillsField" class="text-field" placeholder="Enter your general skills"></textarea>
@@ -131,7 +140,29 @@
         </div>
       </div>
 
-      <button id="saveButton" class="button-54" type="submit">Save</button>
+      <div id="projects" class="tabcontent">
+        <div class="form-group">
+          <label for="projectsField">Projects</label>
+          <textarea id="projectsField" class="text-field" placeholder="Enter your projects"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="projectDescriptionField">Project Descriptions</label>
+          <textarea id="projectDescriptionField" class="text-field" placeholder="Enter descriptions of your projects"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="projectLinksField">Project Links</label>
+          <input type="text" id="projectLinksField" class="text-field" placeholder="Enter links to your projects">
+        </div>
+      </div>
+
+      <div class="toggle-container">
+        <label class="toggle-switch">
+          <input type="checkbox" id="darkModeToggle">
+          <span class="toggle-slider round"></span>
+        </label>
+      </div>
+      
+      <button id="saveButton" class="button-10" type="submit">Save</button>
       <div id="saveStatus" class="save-status"></div>
     </form>
   </div>

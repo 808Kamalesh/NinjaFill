@@ -1,13 +1,39 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+  const body = document.body;
+  const container = document.querySelector('.info-container');
+
+  const darkModeToggle = document.getElementById('darkModeToggle');
+
+  darkModeToggle.addEventListener('change', () => {
+    body.classList.toggle('dark-mode');
+    container.classList.toggle('dark-mode');
+  });
+  
   const personalInfoTab = document.getElementById('personalInfoTab');
-  const educationAndWorkTab = document.getElementById('educationAndWorkTab');
+  const educationTab = document.getElementById('educationTab');
+  const workExperienceTab = document.getElementById('workExperienceTab');
+  const skillsTab = document.getElementById('skillsTab');
+  const projectsTab = document.getElementById('projectsTab');
 
   personalInfoTab.addEventListener('click', function() {
     openTab(event, 'personalInfo');
   });
 
-  educationAndWorkTab.addEventListener('click', function() {
-    openTab(event, 'educationAndWork');
+  educationTab.addEventListener('click', function() {
+    openTab(event, 'education');
+  });
+
+  workExperienceTab.addEventListener('click', function() {
+    openTab(event, 'workExperience');
+  });
+
+  skillsTab.addEventListener('click', function() {
+    openTab(event, 'skills');
+  });
+
+  projectsTab.addEventListener('click', function() {
+    openTab(event, 'projects');
   });
 
   function openTab(evt, tabName) {
@@ -26,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     evt.currentTarget.classList.add("active");
   }
 
-  chrome.storage.sync.get(['name', 'dateOfBirth', 'gender', 'nationality', 'maritalStatus', 'email', 'phone', 'alternatePhone', 'linkedin', 'website', 'github', 'education', 'major', 'gpa', 'coursework', 'workExperience', 'internships', 'volunteer', 'certifications', 'skills', 'technicalSkills', 'softSkills', 'language'], function(data) {
+  chrome.storage.sync.get(['name', 'dateOfBirth', 'gender', 'nationality', 'maritalStatus', 'email', 'phone', 'alternatePhone', 'linkedin', 'website', 'github', 'education', 'major', 'gpa', 'coursework', 'workExperience', 'internships', 'volunteer', 'certifications', 'skills', 'technicalSkills', 'softSkills', 'language', 'projects', 'projectDescription', 'projectLinks', 'customFields'], function(data) {
     const [firstName, ...lastName] = (data.name || '').split(' ');
     document.getElementById('nameField').value = data.name || '';
     document.getElementById('dateOfBirthField').value = data.dateOfBirth || '';
@@ -51,35 +77,40 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('technicalSkillsField').value = data.technicalSkills || '';
     document.getElementById('softSkillsField').value = data.softSkills || '';
     document.getElementById('languageField').value = data.language || '';
-});
+    document.getElementById('projectsField').value = data.projects || '';
+    document.getElementById('projectDescriptionField').value = data.projectDescription || '';
+    document.getElementById('projectLinksField').value = data.projectLinks || '';
 
-document.getElementById('saveButton').addEventListener('click', function() {
-    const name = document.getElementById('nameField').value;
-    const [firstName, ...lastName] = name.split(' ');
-    const dateOfBirth = document.getElementById('dateOfBirthField').value;
-    const gender = document.querySelector('input[name="gender"]:checked').value;
-    const nationality = document.getElementById('nationalityField').value;
-    const maritalStatus = document.getElementById('maritalStatusField').value;
-    const email = document.getElementById('emailField').value;
-    const phone = document.getElementById('phoneField').value;
-    const alternatePhone = document.getElementById('alternatePhoneField').value;
-    const linkedin = document.getElementById('linkedinField').value;
-    const website = document.getElementById('websiteField').value;
-    const github = document.getElementById('githubField').value;
-    const education = document.getElementById('educationField').value;
-    const major = document.getElementById('majorField').value;
-    const gpa = document.getElementById('gpaField').value;
-    const coursework = document.getElementById('courseworkField').value;
-    const workExperience = document.getElementById('workExperienceField').value;
-    const internships = document.getElementById('internshipsField').value;
-    const volunteer = document.getElementById('volunteerField').value;
-    const certifications = document.getElementById('certificationsField').value;
-    const skills = document.getElementById('skillsField').value;
-    const technicalSkills = document.getElementById('technicalSkillsField').value;
-    const softSkills = document.getElementById('softSkillsField').value;
-    const language = document.getElementById('languageField').value;
+    document.getElementById('saveButton').addEventListener('click', function() {
+      const name = document.getElementById('nameField').value;
+      const [firstName, ...lastName] = name.split(' ');
+      const dateOfBirth = document.getElementById('dateOfBirthField').value;
+      const gender = document.querySelector('input[name="gender"]:checked').value;
+      const nationality = document.getElementById('nationalityField').value;
+      const maritalStatus = document.getElementById('maritalStatusField').value;
+      const email = document.getElementById('emailField').value;
+      const phone = document.getElementById('phoneField').value;
+      const alternatePhone = document.getElementById('alternatePhoneField').value;
+      const linkedin = document.getElementById('linkedinField').value;
+      const website = document.getElementById('websiteField').value;
+      const github = document.getElementById('githubField').value;
+      const education = document.getElementById('educationField').value;
+      const major = document.getElementById('majorField').value;
+      const gpa = document.getElementById('gpaField').value;
+      const coursework = document.getElementById('courseworkField').value;
+      const workExperience = document.getElementById('workExperienceField').value;
+      const internships = document.getElementById('internshipsField').value;
+      const volunteer = document.getElementById('volunteerField').value;
+      const certifications = document.getElementById('certificationsField').value;
+      const skills = document.getElementById('skillsField').value;
+      const technicalSkills = document.getElementById('technicalSkillsField').value;
+      const softSkills = document.getElementById('softSkillsField').value;
+      const language = document.getElementById('languageField').value;
+      const projects = document.getElementById('projectsField').value;
+      const projectDescription = document.getElementById('projectDescriptionField').value;
+      const projectLinks = document.getElementById('projectLinksField').value;
 
-    chrome.storage.sync.set({
+      chrome.storage.sync.set({
         'name': name,
         'firstName': firstName,
         'lastName': lastName.join(' '),
@@ -104,15 +135,19 @@ document.getElementById('saveButton').addEventListener('click', function() {
         'skills': skills,
         'technicalSkills': technicalSkills,
         'softSkills': softSkills,
-        'language': language
-    }, function() {
+        'language': language,
+        'projects': projects,
+        'projectDescription': projectDescription,
+        'projectLinks': projectLinks,
+      }, function() {
         const saveStatus = document.getElementById('saveStatus');
         saveStatus.textContent = 'User information saved successfully!';
         saveStatus.classList.add('save-success');
         setTimeout(function() {
-            saveStatus.textContent = '';
-            saveStatus.classList.remove('save-success');
+          saveStatus.textContent = '';
+          saveStatus.classList.remove('save-success');
         }, 3000);
+      });
     });
-});
+  });
 });
