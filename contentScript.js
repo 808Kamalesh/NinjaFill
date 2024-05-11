@@ -3,18 +3,22 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         console.log('Received autofill data:', request.data);
         autofillForm(request.data);
     }
-  });
-  
-  function autofillForm(data) {
+});
+
+function autofillForm(data) {
     const formFields = document.querySelectorAll('input, textarea');
-  
+
     formFields.forEach(field => {
         for (const key in data) {
-            if (field.name.toLowerCase().includes(key.toLowerCase()) || field.id.toLowerCase().includes(key.toLowerCase()) || field.placeholder.toLowerCase().includes(key.toLowerCase())) {
+            const fieldName = field.name.toLowerCase();
+            const fieldId = field.id.toLowerCase();
+            const fieldPlaceholder = field.placeholder.toLowerCase();
+            
+            if (fieldName.includes(key.toLowerCase()) || fieldId.includes(key.toLowerCase()) || fieldPlaceholder.includes(key.toLowerCase())) {
                 field.value = data[key];
                 break;
             } else {
-                if (field.name.toLowerCase().includes(key.toLowerCase().substring(0, 3))) {
+                if (fieldName.includes(key.toLowerCase().substring(0, 3))) {
                     field.value = data[key];
                     break;
                 } else {
@@ -25,6 +29,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
                     }
                 }
             }
+            
             if (field.classList.contains('form-textbox') && field.getAttribute('data-component') === 'first') {
                 field.value = data.name.split(' ')[0];
             } else if (field.classList.contains('form-textbox') && field.getAttribute('data-component') === 'last') {
@@ -32,4 +37,4 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             }
         }
     });
-  }
+}
