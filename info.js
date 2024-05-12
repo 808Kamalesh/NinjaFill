@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     evt.currentTarget.classList.add("active");
   }
 
-  chrome.storage.sync.get(['name', 'dateOfBirth', 'gender', 'nationality', 'maritalStatus', 'email', 'phone', 'alternatePhone', 'linkedin', 'website', 'github', 'education', 'major', 'gpa', 'coursework', 'workExperience', 'internships', 'volunteer', 'certifications', 'skills', 'technicalSkills', 'softSkills', 'language', 'projects', 'projectDescription', 'projectLinks', 'customFields'], function(data) {
+  chrome.storage.sync.get(['name', 'dateOfBirth', 'gender', 'nationality', 'maritalStatus', 'email', 'phone', 'alternatePhone', 'linkedin', 'portfolio', 'github', 'education', 'major', 'gpa', 'coursework', 'workExperience', 'internships', 'volunteer', 'certifications', 'skills', 'technicalSkills', 'softSkills', 'language', 'projects', 'projectDescription', 'projectLinks'], function(data) {
     const [firstName, ...lastName] = (data.name || '').split(' ');
     document.getElementById('nameField').value = data.name || '';
     document.getElementById('dateOfBirthField').value = data.dateOfBirth || '';
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('phoneField').value = data.phone || '';
     document.getElementById('alternatePhoneField').value = data.alternatePhone || '';
     document.getElementById('linkedinField').value = data.linkedin || '';
-    document.getElementById('websiteField').value = data.website || '';
+    document.getElementById('portfolioField').value = data.portfolio || '';
     document.getElementById('githubField').value = data.github || '';
     document.getElementById('educationField').value = data.education || '';
     document.getElementById('majorField').value = data.major || '';
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const phone = document.getElementById('phoneField').value;
       const alternatePhone = document.getElementById('alternatePhoneField').value;
       const linkedin = document.getElementById('linkedinField').value;
-      const website = document.getElementById('websiteField').value;
+      const portfolio = document.getElementById('portfolioField').value;
       const github = document.getElementById('githubField').value;
       const education = document.getElementById('educationField').value;
       const major = document.getElementById('majorField').value;
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'phone': phone,
         'alternatePhone': alternatePhone,
         'linkedin': linkedin,
-        'website': website,
+        'portfolio': portfolio,
         'github': github,
         'education': education,
         'major': major,
