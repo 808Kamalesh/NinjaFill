@@ -6,35 +6,70 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });
 
 function autofillForm(data) {
-    const formFields = document.querySelectorAll('input, textarea');
+    const formFields = document.querySelectorAll('input, textarea, select');
 
     formFields.forEach(field => {
         for (const key in data) {
             const fieldName = field.name.toLowerCase();
             const fieldId = field.id.toLowerCase();
-            const fieldPlaceholder = field.placeholder.toLowerCase();
-            
-            if (fieldName.includes(key.toLowerCase()) || fieldId.includes(key.toLowerCase()) || fieldPlaceholder.includes(key.toLowerCase())) {
-                field.value = data[key];
+            const fieldPlaceholder = field.placeholder ? field.placeholder.toLowerCase() : '';
+            const fieldLabel = getFieldLabel(field).toLowerCase();
+
+            if (fieldName.includes(key.toLowerCase()) || fieldId.includes(key.toLowerCase()) || fieldPlaceholder.includes(key.toLowerCase()) || fieldLabel.includes(key.toLowerCase())) {
+                setFieldValue(field, data[key]);
                 break;
             } else {
-                if (fieldName.includes(key.toLowerCase().substring(0, 3))) {
-                    field.value = data[key];
+                const matchedKey = getMatchedKey(key.toLowerCase(), fieldName, fieldId, fieldPlaceholder, fieldLabel);
+                if (matchedKey) {
+                    setFieldValue(field, data[matchedKey]);
                     break;
-                } else {
-                    const label = document.querySelector(`label[for="${field.id}"]`);
-                    if (label && label.textContent.toLowerCase().includes(key.toLowerCase())) {
-                        field.value = data[key];
-                        break;
-                    }
                 }
-            }
-            
-            if (field.classList.contains('form-textbox') && field.getAttribute('data-component') === 'first') {
-                field.value = data.name.split(' ')[0];
-            } else if (field.classList.contains('form-textbox') && field.getAttribute('data-component') === 'last') {
-                field.value = data.name.split(' ')[1];
             }
         }
     });
+}
+
+function getFieldLabel(field) {
+    const label = document.querySelector(`label[for="${field.id}"]`);
+    return label ? label.textContent.trim() : '';
+}
+
+function getMatchedKey(key, ...fieldValues) {
+    for (const value of fieldValues) {
+        if (value.includes(key)) {
+            return key;
+        } else if (value.includes(key.substring(0, 3))) {
+            return key.substring(0, 3);
+        }
+    }
+    return null;
+}
+
+function setFieldValue(field, value) {
+    if (field.tagName.toLowerCase() === 'select') {
+        setSelectValue(field, value);
+    } else if (field.classList.contains('form-textbox')) {
+        setNameValue(field, value);
+    } else {
+        field.value = value;
+    }
+}
+
+function setSelectValue(select, value) {
+    for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === value || select.options[i].text.toLowerCase() === value.toLowerCase()) {
+            select.selectedIndex = i;
+            break;
+        }
+    }
+}
+
+function setNameValue(field, value) {
+    if (field.getAttribute('data-component') === 'first') {
+        field.value = value.split(' ')[0];
+    } else if (field.getAttribute('data-component') === 'last') {
+        field.value = value.split(' ')[1];
+    } else {
+        field.value = value;
+    }
 }
