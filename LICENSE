@@ -1,32 +1,21 @@
-Proprietary License
+MIT License
 
-This software and associated documentation files (the "Software") are the proprietary property of Kamalesh R(the "Author"). All rights reserved.
+Copyright (c) 2024 Kamalesh R
 
-## Permissions
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-✅ Personal, non-commercial use.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-## Limitations
-
-❌ No copying, modification, merging, publishing, distribution, sublicensing, or selling, in whole or in part, without prior written permission from the Author.
-❌ No commercial use without express permission from the Author.
-❌ No reverse engineering, decompiling, or disassembling the Software.
-❌ No removal or alteration of any copyright, trademark, or other proprietary notices from the Software.
-
-## Termination
-
-This license shall automatically terminate if you violate any of these restrictions and may be terminated by the Author at any time. Upon termination, you must destroy any copies of the Software in your possession whether in electronic or printed format.
-
-## Disclaimer of Warranty
-
-The Software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement. In no event shall the Author be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the Software or the use or other dealings in the Software.
-
-## Limitation of Liability
-
-In no event shall the Author be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of business profits, business interruption, loss of business information, or any other pecuniary loss) arising out of the use of or inability to use the Software, even if the Author has been advised of the possibility of such damages.
-
-## Governing Law
-
-This license and any disputes related to this license or the Software shall be governed by and construed in accordance with the laws of India, without regard to its conflict of laws principles.
-
-© Kamalesh R, 2024
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
